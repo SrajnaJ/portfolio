@@ -63,7 +63,13 @@ function LinkedInIcon() {
 
 function ChevronLeftIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -71,7 +77,13 @@ function ChevronLeftIcon() {
 
 function ChevronRightIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -82,9 +94,11 @@ const experienceItems = [
     company: "Consultadd",
     role: "SOFTWARE ENGINEER I",
     period: "March 2025 - March 2026",
-    summary:
-      "Developing enterprise backend systems using Django and SpringBoot. Managing AWS infrastructure and implementing LLM solutions for internal efficiency.",
-    tags: ["AWS", "Django", "SpringBoot", "LLMs"],
+    points: [
+      "Contributed to backend services for a data platform using Java and Spring Boot, enabling scalable data ingestion, processing, and internal APIs for research workflows.",
+      "Built an AI-powered voice assistant using FastAPI, ElevenLabs, and Twilio, supporting real-time speech processing and automated call handling.",
+    ],
+    tags: ["Java", "Spring Boot", "FastAPI", "AWS", "LLMs"],
   },
 ];
 
@@ -138,29 +152,31 @@ const projectItems = [
 ];
 
 const skillIcons = [
-  { label: "PYTHON", symbol: "</>" },
+  { label: "JAVA", symbol: "J" },
+  { label: "PYTHON", symbol: "Py" },
+  { label: "FASTAPI", symbol: "F" },
+  { label: "SPRINGBOOT", symbol: "S" },
+  { label: "POSTGRESQL", symbol: "DB" },
+  { label: "DOCKER", symbol: "Dk" },
   { label: "AWS", symbol: "☁" },
-  { label: "DJANGO", symbol: "◫" },
-  { label: "POSTGRESQL", symbol: "◉" },
-  { label: "GENAI", symbol: "◌" },
-  { label: "FULL STACK", symbol: "◈" },
+  { label: "LLMS", symbol: "AI" },
 ];
 
 const skillCards = [
   {
-    title: "CLOUD & DEVOPS",
-    description: "AWS, Docker, Kubernetes, CI/CD",
+    title: "BACKEND",
+    description: "Java, Python, FastAPI, Spring Boot",
     value: "",
   },
   {
-    title: "AI / GENAI",
-    description: "LLM Integration, RAG Pipelines, Gemini API",
+    title: "CLOUD & DATA",
+    description: "PostgreSQL, Docker, AWS",
     value: "",
   },
   {
-    title: "ALGORITHMS",
-    description: "LeetCode Rating",
-    value: "1644",
+    title: "AI SYSTEMS",
+    description: "LLMs, real-time speech workflows, applied AI integrations",
+    value: "",
   },
 ];
 
@@ -245,46 +261,64 @@ export default function App() {
 
         <main className="mx-auto max-w-[1280px] px-8 pb-24 pt-16 lg:px-12 lg:pb-32 lg:pt-24">
           <section className="min-h-[calc(100vh-90px)]">
-            <div className="max-w-[620px] pt-14 lg:pt-20">
-              <h1 className="text-[4.2rem] leading-[0.9] font-black tracking-[-0.08em] sm:text-[5.3rem] lg:text-[5.9rem]">
-                <span className="block text-slate-900">Hello!</span>
-                <span className="block text-[#1682e3]">
-                  I&apos;m a Software
-                </span>
-                <span className="block text-[#1682e3]">Engineer.</span>
-              </h1>
+            <div className="grid items-center gap-10 lg:grid-cols-[620px_1fr]">
+              <div className="max-w-[620px] pt-14 lg:pt-20">
+                <h1 className="text-[4.2rem] leading-[0.9] font-black tracking-[-0.08em] sm:text-[5.3rem] lg:text-[5.9rem]">
+                  <span className="block text-slate-900">Hello!</span>
+                  <span className="block text-[#1682e3]">
+                    I&apos;m a Software
+                  </span>
+                  <span className="block text-[#1682e3]">Engineer.</span>
+                </h1>
 
-              <p className="mt-8 max-w-[560px] text-[1.04rem] leading-7 text-slate-500">
-                I build reliable backend systems and cloud applications. Focused
-                on creating efficient software solutions that solve real-world
-                problems.
-              </p>
+                <p className="mt-8 max-w-[560px] text-[1.04rem] leading-7 text-slate-500">
+                  Code, curiosity, and a lot of &ldquo;why does this behave like
+                  that?&rdquo; I&apos;m a Software Engineer who enjoys exploring
+                  problems and building practical solutions along the way.
+                </p>
 
-              <div className="mt-10 flex items-center gap-4">
-                <button
-                  type="button"
-                  className="rounded-md bg-[#0476D0] px-6 py-3 text-xs font-bold tracking-[0.18em] text-white shadow-[0_16px_32px_rgba(4,118,208,0.28)] transition hover:-translate-y-0.5 hover:bg-[#0367b6]"
-                >
-                  VIEW WORK
-                </button>
-
-                <div className="flex items-center gap-3">
-                  <IconButton
-                    label="LeetCode"
-                    href="https://leetcode.com/u/Srajna/"
+                <div className="mt-10 flex items-center gap-4">
+                  <button
+                    type="button"
+                    className="rounded-md bg-[#0476D0] px-6 py-3 text-xs font-bold tracking-[0.18em] text-white shadow-[0_16px_32px_rgba(4,118,208,0.28)] transition hover:-translate-y-0.5 hover:bg-[#0367b6]"
                   >
-                    <LeetCodeIcon />
-                  </IconButton>
-                  <IconButton label="GitHub" href="https://github.com/SrajnaJ">
-                    <GitHubIcon />
-                  </IconButton>
-                  <IconButton
-                    label="LinkedIn"
-                    href="https://www.linkedin.com/in/srajna-jain-74a183233/"
-                  >
-                    <LinkedInIcon />
-                  </IconButton>
+                    VIEW WORK
+                  </button>
+
+                  <div className="flex items-center gap-3">
+                    <IconButton
+                      label="LeetCode"
+                      href="https://leetcode.com/u/Srajna/"
+                    >
+                      <LeetCodeIcon />
+                    </IconButton>
+                    <IconButton
+                      label="GitHub"
+                      href="https://github.com/SrajnaJ"
+                    >
+                      <GitHubIcon />
+                    </IconButton>
+                    <IconButton
+                      label="LinkedIn"
+                      href="https://www.linkedin.com/in/srajna-jain-74a183233/"
+                    >
+                      <LinkedInIcon />
+                    </IconButton>
+                  </div>
                 </div>
+              </div>
+
+              <div className="relative hidden min-h-[470px] items-center justify-center lg:flex">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_56%_32%,rgba(22,130,227,0.14),transparent_30%),radial-gradient(circle_at_50%_68%,rgba(255,209,26,0.16),transparent_24%)]" />
+                <img
+                  src="/images/avatar.png"
+                  alt="Avatar illustration"
+                  className="relative h-[470px] w-auto object-contain opacity-95 [mask-image:radial-gradient(circle_at_center,black_56%,transparent_90%)]"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,rgba(248,246,243,0),rgba(248,246,243,1))]" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(248,246,243,1),rgba(248,246,243,0))]" />
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-[linear-gradient(90deg,rgba(248,246,243,1),rgba(248,246,243,0))]" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-[linear-gradient(270deg,rgba(248,246,243,1),rgba(248,246,243,0))]" />
               </div>
             </div>
           </section>
@@ -320,9 +354,11 @@ export default function App() {
                     </span>
                   </div>
 
-                  <p className="mt-6 max-w-3xl text-[1rem] leading-7 text-slate-600">
-                    {item.summary}
-                  </p>
+                  <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-[1rem] leading-7 text-slate-600">
+                    {item.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
 
                   <div className="mt-6 flex flex-wrap gap-2.5">
                     {item.tags.map((tag) => (
@@ -360,7 +396,8 @@ export default function App() {
                   aria-label="Previous project"
                   onClick={() =>
                     setActiveProjectIndex(
-                      (activeProjectIndex - 1 + projectItems.length) % projectItems.length,
+                      (activeProjectIndex - 1 + projectItems.length) %
+                        projectItems.length,
                     )
                   }
                   className="absolute left-4 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-700 shadow-[0_14px_30px_rgba(15,23,42,0.12)] transition hover:bg-white hover:text-[#0476D0]"
@@ -371,7 +408,11 @@ export default function App() {
                 <button
                   type="button"
                   aria-label="Next project"
-                  onClick={() => setActiveProjectIndex((activeProjectIndex + 1) % projectItems.length)}
+                  onClick={() =>
+                    setActiveProjectIndex(
+                      (activeProjectIndex + 1) % projectItems.length,
+                    )
+                  }
                   className="absolute right-4 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-700 shadow-[0_14px_30px_rgba(15,23,42,0.12)] transition hover:bg-white hover:text-[#0476D0]"
                 >
                   <ChevronRightIcon />
