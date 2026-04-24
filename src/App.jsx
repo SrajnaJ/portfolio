@@ -105,26 +105,32 @@ const experienceItems = [
 const projectItems = [
   {
     title: "Internal Organization Chatbot",
-    description:
-      "RAG-based internal knowledge chatbot with auth-ready FastAPI and Next.js architecture.",
+    points: [
+      "Built a RAG-based internal knowledge chatbot that ingests documents and retrieves context using FAISS vector search.",
+      "Developed a FastAPI backend and Next.js chat UI with auth-ready architecture for scalable internal-only usage.",
+    ],
     tags: ["FastAPI", "Next.js", "FAISS", "Sentence Transformers", "LLM API"],
     imageUrl: "/images/chatbot.png",
-    projectHref: "#",
-    repoHref: "#",
+    projectHref: "",
+    repoHref: "https://github.com/SrajnaJ/IntChatbot",
   },
   {
     title: "Social Genius AI",
-    description:
-      "AI-powered content generation platform for social media with Gemini-driven content workflows.",
+    points: [
+      "Built an AI-powered content generation platform that creates platform-specific content from images or tagged text.",
+      "Integrated Gemini-powered generation, responsive Next.js UI, and Stripe subscriptions for secure payments.",
+    ],
     tags: ["Next.js", "Tailwind CSS", "Gemini API", "Stripe"],
     imageUrl: "/images/social_genius.png",
-    projectHref: "#",
-    repoHref: "#",
+    projectHref: "https://socialgenius-ai.netlify.app/",
+    repoHref: "",
   },
   {
     title: "Estates Here",
-    description:
-      "Real estate web app for buying, selling, and renting with advanced filters and user auth.",
+    points: [
+      "Built a real estate platform for buying, selling, and renting properties with advanced filters and clean UI.",
+      "Implemented Google OAuth, JWT authentication, and bcrypt-secured flows for direct user-owner interaction.",
+    ],
     tags: [
       "JavaScript",
       "Node.js",
@@ -137,17 +143,30 @@ const projectItems = [
       "React",
     ],
     imageUrl: "/images/estates.png",
-    projectHref: "#",
-    repoHref: "#",
+    projectHref: "https://mern-estate-byl5.onrender.com/",
+    repoHref: "https://github.com/SrajnaJ/Mern-Estate",
   },
   {
     title: "Mapty",
-    description:
-      "Workout mapping app that uses browser geolocation to track runs and rides on an interactive map.",
+    points: [
+      "Built a workout tracking app that maps runs and cycling sessions using the browser Geolocation API.",
+      "Used vanilla JavaScript to manage location-based interactions, UI state, and workout history display.",
+    ],
     tags: ["HTML", "CSS", "JavaScript", "Geolocation API"],
     imageUrl: "/images/mapty.png",
-    projectHref: "#",
-    repoHref: "#",
+    projectHref: "",
+    repoHref: "https://github.com/SrajnaJ/Mapty",
+  },
+  {
+    title: "Forkify",
+    points: [
+      "Built a recipe discovery application with search, ingredient details, and saved cooking workflow interactions.",
+      "Developed the app using JavaScript with Webpack, Babel, Fraction.js, and the Food2Fork API.",
+    ],
+    tags: ["JavaScript", "Webpack", "Babel", "Fraction.js", "Food2Fork API"],
+    imageUrl: "/images/forkify.png",
+    projectHref: "",
+    repoHref: "https://github.com/SrajnaJ/forkify",
   },
 ];
 
@@ -162,21 +181,89 @@ const skillIcons = [
   { label: "LLMS", symbol: "AI" },
 ];
 
+const skillCarouselItems = [
+  {
+    label: "Java",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  },
+  {
+    label: "Python",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    label: "Django",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+  },
+  {
+    label: "Spring",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  },
+  {
+    label: "MySQL",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
+  {
+    label: "PostgreSQL",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    label: "Docker",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  },
+  {
+    label: "Algorithms",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thealgorithms/thealgorithms-original.svg",
+  },
+  {
+    label: "GitHub",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
+  {
+    label: "Postman",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+  },
+  {
+    label: "MongoDB",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    label: "Operating Systems",
+    iconUrl:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+  },
+  {
+    label: "LLMs",
+    iconUrl: "",
+  },
+];
+
 const skillCards = [
   {
     title: "BACKEND",
-    description: "Java, Python, FastAPI, Spring Boot",
-    value: "",
+    description: "Java, Python, FastAPI, Django, Spring",
   },
   {
     title: "CLOUD & DATA",
-    description: "PostgreSQL, Docker, AWS",
-    value: "",
+    description: "AWS, Docker, PostgreSQL, MySQL, MongoDB, Postman",
   },
   {
-    title: "AI SYSTEMS",
-    description: "LLMs, real-time speech workflows, applied AI integrations",
-    value: "",
+    title: "LLM & RAG",
+    description: "LLMs, RAG pipelines, applied AI workflows, prompt-driven systems",
+  },
+  {
+    title: "ALGORITHMS",
+    description: "800+ problems solved on various coding platforms. LeetCode rating - 1666",
   },
 ];
 
@@ -184,18 +271,22 @@ const hobbyItems = [
   {
     title: "Badminton",
     subtitle: "Speed and strategy.",
+    imageUrl: "/images/badminton.png",
   },
   {
     title: "Sketching",
     subtitle: "Focus through art.",
+    imageUrl: "/images/sketching.png",
   },
   {
     title: "Reading",
     subtitle: "New perspectives.",
+    imageUrl: "/images/reading.png",
   },
   {
     title: "Traveling",
     subtitle: "Exploring the world.",
+    imageUrl: "/images/travel.png",
   },
 ];
 
@@ -203,22 +294,26 @@ const contactCards = [
   {
     icon: "✉",
     title: "Email",
-    subtitle: "hello@atelier.dev",
+    subtitle: "srajnajain13@gmail.com",
+    href: "mailto:srajnajain13@gmail.com",
   },
   {
     icon: "◔",
     title: "LinkedIn",
     subtitle: "Connect with me",
+    href: "https://www.linkedin.com/in/srajna-jain-74a183233/",
   },
   {
     icon: "⌖",
     title: "Location",
-    subtitle: "San Francisco, CA",
+    subtitle: "India",
+    href: "",
   },
 ];
 
 export default function App() {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [activeSkillIndex, setActiveSkillIndex] = useState(0);
 
   const visibleProjects = projectItems.map((project, index) => {
     let position = index - activeProjectIndex;
@@ -230,6 +325,21 @@ export default function App() {
     return { ...project, position, index };
   });
 
+  const nextSkill = () => {
+    setActiveSkillIndex((current) => (current + 1) % skillCarouselItems.length);
+  };
+
+  const prevSkill = () => {
+    setActiveSkillIndex(
+      (current) => (current - 1 + skillCarouselItems.length) % skillCarouselItems.length,
+    );
+  };
+
+  const visibleSkillItems = Array.from(
+    { length: skillCarouselItems.length },
+    (_, index) => skillCarouselItems[(activeSkillIndex + index) % skillCarouselItems.length],
+  );
+
   return (
     <div className="min-h-screen bg-[#f8f6f3] text-slate-900">
       <div className="absolute inset-x-0 top-0 h-1 bg-[#5c4df5]" />
@@ -237,17 +347,21 @@ export default function App() {
       <div className="pointer-events-none absolute right-[8%] top-[18%] h-80 w-80 rounded-full bg-[radial-gradient(circle,_rgba(255,220,104,0.18),_transparent_62%)]" />
 
       <div className="relative">
-        <header className="border-b border-slate-200/70 bg-white/85 backdrop-blur-sm">
+        <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-sm">
           <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-8 py-4 lg:px-12">
-            <div className="text-sm font-black tracking-tight text-[#0476D0]">
-              ATELIER.DEV
-            </div>
-
             <ul className="hidden items-center gap-12 text-[11px] font-medium text-slate-500 md:flex">
-              <li>Projects</li>
-              <li>Experience</li>
-              <li>Skills</li>
-              <li>Contact</li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#experience">Experience</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
 
             <button
@@ -323,7 +437,10 @@ export default function App() {
             </div>
           </section>
 
-          <section className="grid gap-10 pb-24 pt-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-start lg:gap-14">
+          <section
+            id="experience"
+            className="scroll-mt-24 grid gap-10 pb-24 pt-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-start lg:gap-14"
+          >
             <div className="pt-2">
               <h2 className="text-4xl font-black tracking-[-0.06em] text-[#1682e3]">
                 Experience
@@ -375,7 +492,7 @@ export default function App() {
             </div>
           </section>
 
-          <section className="pb-16 pt-8">
+          <section id="projects" className="scroll-mt-24 pb-16 pt-8">
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div>
                 <h2 className="text-[3.2rem] leading-none font-black tracking-[-0.07em] text-slate-900 sm:text-[3.8rem]">
@@ -390,7 +507,7 @@ export default function App() {
             </div>
 
             <div className="mt-10">
-              <div className="relative mx-auto h-[500px] max-w-[980px] overflow-hidden">
+              <div className="relative mx-auto h-[640px] max-w-[1180px] overflow-hidden">
                 <button
                   type="button"
                   aria-label="Previous project"
@@ -420,11 +537,11 @@ export default function App() {
 
                 {visibleProjects.map((project) => {
                   const isVisible = Math.abs(project.position) <= 1;
-                  const translateX = project.position * 250;
-                  const translateY = project.position === 0 ? 0 : 28;
-                  const scale = project.position === 0 ? 1 : 0.8;
+                  const translateX = project.position * 320;
+                  const translateY = project.position === 0 ? 0 : 34;
+                  const scale = project.position === 0 ? 1 : 0.82;
                   const opacity = project.position === 0 ? 1 : 0.76;
-                  const cardWidth = project.position === 0 ? 440 : 330;
+                  const cardWidth = project.position === 0 ? 600 : 430;
                   const pointerClass =
                     project.position === 0
                       ? "pointer-events-auto"
@@ -446,12 +563,12 @@ export default function App() {
                         zIndex: 20 - Math.abs(project.position),
                       }}
                     >
-                      <div className="h-[250px] overflow-hidden bg-[#efedeb]">
+                      <div className="flex h-[320px] items-center justify-center overflow-hidden bg-[#efedeb]">
                         {project.imageUrl ? (
                           <img
                             src={project.imageUrl}
                             alt={project.title}
-                            className="h-full w-full object-cover object-top"
+                            className="h-full w-full object-contain object-center"
                           />
                         ) : (
                           <div
@@ -481,9 +598,11 @@ export default function App() {
                             0{project.index + 1}
                           </span>
                         </div>
-                        <p className="mt-2 truncate text-[0.92rem] leading-6 text-slate-600">
-                          {project.description}
-                        </p>
+                        <ul className="mt-3 list-disc space-y-2 pl-5 text-[0.94rem] leading-6 text-slate-600">
+                          {project.points.map((point) => (
+                            <li key={point}>{point}</li>
+                          ))}
+                        </ul>
 
                         <div className="mt-4 flex flex-wrap gap-2">
                           {project.tags.map((tag) => (
@@ -496,24 +615,30 @@ export default function App() {
                           ))}
                         </div>
 
-                        <div className="mt-5 flex items-center gap-2">
-                          <a
-                            href={project.projectHref}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded-md bg-[#0476D0] px-3 py-2 text-[10px] font-black tracking-[0.14em] text-white shadow-[0_10px_20px_rgba(4,118,208,0.2)]"
-                          >
-                            PROJ LINK
-                          </a>
-                          <a
-                            href={project.repoHref}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded-md border border-slate-200 bg-white px-3 py-2 text-[10px] font-black tracking-[0.14em] text-slate-700"
-                          >
-                            REPO LINK
-                          </a>
-                        </div>
+                        {(project.projectHref || project.repoHref) && (
+                          <div className="mt-5 flex items-center gap-2">
+                            {project.projectHref && (
+                              <a
+                                href={project.projectHref}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="rounded-md bg-[#0476D0] px-3 py-2 text-[10px] font-black tracking-[0.14em] text-white shadow-[0_10px_20px_rgba(4,118,208,0.2)]"
+                              >
+                                DEMO LINK
+                              </a>
+                            )}
+                            {project.repoHref && (
+                              <a
+                                href={project.repoHref}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="rounded-md border border-slate-200 bg-white px-3 py-2 text-[10px] font-black tracking-[0.14em] text-slate-700"
+                              >
+                                REPO LINK
+                              </a>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </article>
                   );
@@ -538,7 +663,10 @@ export default function App() {
             </div>
           </section>
 
-          <section className="mx-[-2rem] bg-[#f3f1ef] px-8 py-20 lg:mx-[-3rem] lg:px-12">
+          <section
+            id="skills"
+            className="scroll-mt-24 mx-[-2rem] bg-[#f3f1ef] px-8 py-20 lg:mx-[-3rem] lg:px-12"
+          >
             <div className="mx-auto max-w-[1220px]">
               <div className="text-center">
                 <h2 className="text-[3rem] leading-none font-black tracking-[-0.06em] text-slate-900 sm:text-[3.4rem]">
@@ -548,38 +676,65 @@ export default function App() {
                 <div className="mx-auto mt-4 h-1 w-20 bg-[#ffd11a]" />
               </div>
 
-              <div className="mt-12 grid grid-cols-2 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-                {skillIcons.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex flex-col items-center text-center"
+              <div className="mt-12">
+                <div className="relative">
+                  <button
+                    type="button"
+                    aria-label="Previous skill"
+                    onClick={prevSkill}
+                    className="absolute -left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-[0_10px_24px_rgba(15,23,42,0.08)] transition hover:text-[#0476D0]"
                   >
-                    <div className="flex h-16 w-16 items-center justify-center rounded-md border border-slate-200 bg-white text-xl font-bold text-[#1682e3] shadow-[0_8px_20px_rgba(15,23,42,0.05)]">
-                      {item.symbol}
+                    <ChevronLeftIcon />
+                  </button>
+
+                  <div className="overflow-hidden px-10">
+                    <div className="flex gap-5 transition-transform duration-500 ease-out">
+                      {visibleSkillItems.map((item, index) => (
+                        <div
+                          key={`${item.label}-${index}`}
+                          className="group flex w-[140px] flex-none flex-col items-center rounded-xl border border-slate-200 bg-white px-4 py-5 text-center shadow-[0_10px_24px_rgba(15,23,42,0.05)] transition hover:-translate-y-1"
+                        >
+                          <div className="flex h-14 w-14 items-center justify-center">
+                            {item.iconUrl ? (
+                              <img
+                                src={item.iconUrl}
+                                alt={item.label}
+                                className="h-12 w-12 object-contain"
+                              />
+                            ) : (
+                              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0476D0]/10 text-sm font-black tracking-[0.16em] text-[#0476D0]">
+                                AI
+                              </div>
+                            )}
+                          </div>
+                          <p className="mt-4 text-[10px] font-black tracking-[0.18em] text-slate-600">
+                            {item.label}
+                          </p>
+                        </div>
+                      ))}
                     </div>
-                    <p className="mt-3 text-[10px] font-black tracking-[0.24em] text-slate-500">
-                      {item.label}
-                    </p>
                   </div>
-                ))}
+
+                  <button
+                    type="button"
+                    aria-label="Next skill"
+                    onClick={nextSkill}
+                    className="absolute -right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-[0_10px_24px_rgba(15,23,42,0.08)] transition hover:text-[#0476D0]"
+                  >
+                    <ChevronRightIcon />
+                  </button>
+                </div>
               </div>
 
-              <div className="mt-10 grid gap-4 lg:grid-cols-3">
+              <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                 {skillCards.map((card) => (
                   <article
                     key={card.title}
                     className="rounded-md border border-slate-200 bg-white px-5 py-5 shadow-[0_8px_20px_rgba(15,23,42,0.04)]"
                   >
-                    <div className="flex items-center justify-between gap-4">
-                      <p className="text-[10px] font-black tracking-[0.22em] text-[#1682e3]">
-                        {card.title}
-                      </p>
-                      {card.value ? (
-                        <span className="text-sm font-black text-[#1682e3]">
-                          {card.value}
-                        </span>
-                      ) : null}
-                    </div>
+                    <p className="text-[10px] font-black tracking-[0.22em] text-[#1682e3]">
+                      {card.title}
+                    </p>
                     <p className="mt-4 text-sm leading-6 text-slate-500">
                       {card.description}
                     </p>
@@ -600,8 +755,12 @@ export default function App() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {hobbyItems.map((item) => (
                 <article key={item.title} className="overflow-hidden">
-                  <div className="flex h-[170px] items-center justify-center rounded-md border border-slate-200 bg-[#f1efed] text-[10px] font-black tracking-[0.3em] text-slate-400">
-                    PHOTO PLACEHOLDER
+                  <div className="h-[170px] overflow-hidden rounded-md border border-slate-200 bg-[#f1efed]">
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="h-full w-full object-cover object-center"
+                    />
                   </div>
                   <div className="px-0 py-3">
                     <h3 className="text-lg font-black tracking-[-0.03em] text-slate-900">
@@ -639,7 +798,7 @@ export default function App() {
             </div>
           </section>
 
-          <section className="pb-24 pt-4">
+          <section id="contact" className="scroll-mt-24 pb-24 pt-4">
             <div className="text-center">
               <h2 className="text-[3rem] leading-none font-black tracking-[-0.06em] text-slate-900">
                 <span>Get In</span>
@@ -649,18 +808,36 @@ export default function App() {
 
             <div className="mx-auto mt-12 grid max-w-[980px] gap-6 md:grid-cols-3">
               {contactCards.map((card) => (
-                <article
-                  key={card.title}
-                  className="rounded-md border border-slate-200 bg-[#f5f2ef] px-6 py-8 text-center shadow-[0_10px_22px_rgba(15,23,42,0.04)]"
-                >
-                  <div className="text-2xl font-bold text-[#1682e3]">
-                    {card.icon}
-                  </div>
-                  <h3 className="mt-4 text-base font-black tracking-[-0.03em] text-slate-900">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-500">{card.subtitle}</p>
-                </article>
+                card.href ? (
+                  <a
+                    key={card.title}
+                    href={card.href}
+                    target={card.href.startsWith("http") ? "_blank" : undefined}
+                    rel={card.href.startsWith("http") ? "noreferrer" : undefined}
+                    className="rounded-md border border-slate-200 bg-[#f5f2ef] px-6 py-8 text-center shadow-[0_10px_22px_rgba(15,23,42,0.04)] transition hover:-translate-y-1"
+                  >
+                    <div className="text-2xl font-bold text-[#1682e3]">
+                      {card.icon}
+                    </div>
+                    <h3 className="mt-4 text-base font-black tracking-[-0.03em] text-slate-900">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-500">{card.subtitle}</p>
+                  </a>
+                ) : (
+                  <article
+                    key={card.title}
+                    className="rounded-md border border-slate-200 bg-[#f5f2ef] px-6 py-8 text-center shadow-[0_10px_22px_rgba(15,23,42,0.04)]"
+                  >
+                    <div className="text-2xl font-bold text-[#1682e3]">
+                      {card.icon}
+                    </div>
+                    <h3 className="mt-4 text-base font-black tracking-[-0.03em] text-slate-900">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-500">{card.subtitle}</p>
+                  </article>
+                )
               ))}
             </div>
 
