@@ -7,7 +7,7 @@ function IconButton({ children, label, href }) {
       aria-label={label}
       target="_blank"
       rel="noreferrer"
-      className="flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white shadow-[0_6px_18px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(15,23,42,0.12)]"
+      className="flex h-12 w-12 items-center justify-center rounded-md border border-slate-200 bg-white shadow-[0_6px_18px_rgba(15,23,42,0.08)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(15,23,42,0.12)]"
     >
       {children}
     </a>
@@ -16,7 +16,7 @@ function IconButton({ children, label, href }) {
 
 function LeetCodeIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none">
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none">
       <path
         d="M14.8 4.3l4.8 4.7c.8.8.8 2.1 0 2.9l-4.8 4.8"
         stroke="#FFA116"
@@ -43,7 +43,7 @@ function LeetCodeIcon() {
 
 function GitHubIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="#111111">
+    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="#111111">
       <path d="M12 .5a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.41-4.04-1.41-.55-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.83 1.2 1.83 1.2 1.08 1.8 2.82 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.66-.3-5.47-1.3-5.47-5.78 0-1.28.47-2.33 1.22-3.16-.12-.3-.53-1.52.12-3.16 0 0 1-.31 3.3 1.2A11.7 11.7 0 0112 6.6c1.03 0 2.07.14 3.03.4 2.3-1.5 3.3-1.2 3.3-1.2.65 1.64.24 2.86.12 3.16.76.83 1.22 1.88 1.22 3.16 0 4.49-2.81 5.47-5.49 5.77.43.37.81 1.1.81 2.23v3.3c0 .32.22.7.83.58A12 12 0 0012 .5z" />
     </svg>
   );
@@ -51,7 +51,7 @@ function GitHubIcon() {
 
 function LinkedInIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4.5 w-4.5">
+    <svg viewBox="0 0 24 24" className="h-6 w-6">
       <rect x="2.5" y="2.5" width="19" height="19" rx="3.5" fill="#0A66C2" />
       <path
         d="M8.1 10.1H5.9V18h2.2v-7.9zm.15-2.45c0-.76-.57-1.36-1.43-1.36-.84 0-1.42.6-1.42 1.36 0 .75.57 1.36 1.4 1.36h.02c.86 0 1.43-.61 1.43-1.36zM18.1 13.3c0-2.42-1.29-3.55-3-3.55-1.38 0-2 .76-2.34 1.29v-1.1h-2.2c.03.73 0 7.9 0 7.9h2.2v-4.4c0-.24.02-.47.09-.64.19-.47.62-.95 1.34-.95.95 0 1.33.71 1.33 1.75V18h2.2v-4.7z"
@@ -259,11 +259,13 @@ const skillCards = [
   },
   {
     title: "LLM & RAG",
-    description: "LLMs, RAG pipelines, applied AI workflows, prompt-driven systems",
+    description:
+      "LLMs, RAG pipelines, applied AI workflows, prompt-driven systems",
   },
   {
     title: "ALGORITHMS",
-    description: "800+ problems solved on various coding platforms. LeetCode rating - 1666",
+    description:
+      "800+ problems solved on various coding platforms. LeetCode rating - 1666",
   },
 ];
 
@@ -331,13 +333,17 @@ export default function App() {
 
   const prevSkill = () => {
     setActiveSkillIndex(
-      (current) => (current - 1 + skillCarouselItems.length) % skillCarouselItems.length,
+      (current) =>
+        (current - 1 + skillCarouselItems.length) % skillCarouselItems.length,
     );
   };
 
   const visibleSkillItems = Array.from(
     { length: skillCarouselItems.length },
-    (_, index) => skillCarouselItems[(activeSkillIndex + index) % skillCarouselItems.length],
+    (_, index) =>
+      skillCarouselItems[
+        (activeSkillIndex + index) % skillCarouselItems.length
+      ],
   );
 
   return (
@@ -349,7 +355,7 @@ export default function App() {
       <div className="relative">
         <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-sm">
           <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-8 py-4 lg:px-12">
-            <ul className="hidden items-center gap-12 text-[11px] font-medium text-slate-500 md:flex">
+            <ul className="hidden items-center gap-12 text-[13px] font-medium text-slate-500 md:flex">
               <li>
                 <a href="#projects">Projects</a>
               </li>
@@ -364,12 +370,13 @@ export default function App() {
               </li>
             </ul>
 
-            <button
-              type="button"
-              className="rounded-md bg-[#ffd11a] px-5 py-2 text-[11px] font-black tracking-[0.2em] text-slate-900 shadow-[0_8px_20px_rgba(255,209,26,0.32)]"
+            <a
+              href="/resume.pdf"
+              download
+              className="rounded-md bg-[#ffd11a] px-5 py-2 text-[11px] font-black tracking-[0.2em] text-slate-900 shadow-[0_8px_20px_rgba(255,209,26,0.32)] inline-block"
             >
               RESUME
-            </button>
+            </a>
           </nav>
         </header>
 
@@ -392,12 +399,12 @@ export default function App() {
                 </p>
 
                 <div className="mt-10 flex items-center gap-4">
-                  <button
-                    type="button"
+                  <a
+                    href="#projects"
                     className="rounded-md bg-[#0476D0] px-6 py-3 text-xs font-bold tracking-[0.18em] text-white shadow-[0_16px_32px_rgba(4,118,208,0.28)] transition hover:-translate-y-0.5 hover:bg-[#0367b6]"
                   >
                     VIEW WORK
-                  </button>
+                  </a>
 
                   <div className="flex items-center gap-3">
                     <IconButton
@@ -788,12 +795,12 @@ export default function App() {
                   </p>
                 </div>
 
-                <button
-                  type="button"
+                <a
+                  href="mailto:srajnajain13@gmail.com"
                   className="w-fit rounded-md bg-[#ffd11a] px-8 py-4 text-xs font-black tracking-[0.16em] text-slate-900 shadow-[0_12px_28px_rgba(0,0,0,0.15)]"
                 >
                   EMAIL ME
-                </button>
+                </a>
               </div>
             </div>
           </section>
@@ -807,13 +814,15 @@ export default function App() {
             </div>
 
             <div className="mx-auto mt-12 grid max-w-[980px] gap-6 md:grid-cols-3">
-              {contactCards.map((card) => (
+              {contactCards.map((card) =>
                 card.href ? (
                   <a
                     key={card.title}
                     href={card.href}
                     target={card.href.startsWith("http") ? "_blank" : undefined}
-                    rel={card.href.startsWith("http") ? "noreferrer" : undefined}
+                    rel={
+                      card.href.startsWith("http") ? "noreferrer" : undefined
+                    }
                     className="rounded-md border border-slate-200 bg-[#f5f2ef] px-6 py-8 text-center shadow-[0_10px_22px_rgba(15,23,42,0.04)] transition hover:-translate-y-1"
                   >
                     <div className="text-2xl font-bold text-[#1682e3]">
@@ -822,7 +831,9 @@ export default function App() {
                     <h3 className="mt-4 text-base font-black tracking-[-0.03em] text-slate-900">
                       {card.title}
                     </h3>
-                    <p className="mt-2 text-sm text-slate-500">{card.subtitle}</p>
+                    <p className="mt-2 text-sm text-slate-500">
+                      {card.subtitle}
+                    </p>
                   </a>
                 ) : (
                   <article
@@ -835,58 +846,12 @@ export default function App() {
                     <h3 className="mt-4 text-base font-black tracking-[-0.03em] text-slate-900">
                       {card.title}
                     </h3>
-                    <p className="mt-2 text-sm text-slate-500">{card.subtitle}</p>
+                    <p className="mt-2 text-sm text-slate-500">
+                      {card.subtitle}
+                    </p>
                   </article>
-                )
-              ))}
-            </div>
-
-            <div className="mx-auto mt-10 max-w-[980px] rounded-[1rem] border border-slate-200 bg-white px-6 py-8 shadow-[0_14px_30px_rgba(15,23,42,0.05)] md:px-8 md:py-10">
-              <form className="space-y-7">
-                <div className="grid gap-6 md:grid-cols-2">
-                  <label className="block">
-                    <span className="text-[10px] font-black tracking-[0.22em] text-slate-700">
-                      FULL NAME
-                    </span>
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="mt-3 w-full rounded-sm border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#1682e3]"
-                    />
-                  </label>
-
-                  <label className="block">
-                    <span className="text-[10px] font-black tracking-[0.22em] text-slate-700">
-                      EMAIL ADDRESS
-                    </span>
-                    <input
-                      type="email"
-                      placeholder="your@email.com"
-                      className="mt-3 w-full rounded-sm border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#1682e3]"
-                    />
-                  </label>
-                </div>
-
-                <label className="block">
-                  <span className="text-[10px] font-black tracking-[0.22em] text-slate-700">
-                    MESSAGE
-                  </span>
-                  <textarea
-                    rows="5"
-                    placeholder="Tell me about your project..."
-                    className="mt-3 w-full rounded-sm border border-slate-200 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#1682e3]"
-                  />
-                </label>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="rounded-md bg-[#0476D0] px-8 py-3 text-xs font-black tracking-[0.16em] text-white shadow-[0_14px_30px_rgba(4,118,208,0.22)]"
-                  >
-                    SEND MESSAGE →
-                  </button>
-                </div>
-              </form>
+                ),
+              )}
             </div>
           </section>
         </main>
