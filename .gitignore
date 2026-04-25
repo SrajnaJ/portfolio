@@ -27,4 +27,4 @@ __pycache__/
 *.pyc
 
 config.toml
-public/images
+public/
