@@ -354,8 +354,8 @@ export default function App() {
 
       <div className="relative">
         <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-sm">
-          <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-8 py-4 lg:px-12">
-            <ul className="hidden items-center gap-12 text-[13px] font-medium text-slate-500 md:flex">
+          <nav className="mx-auto flex max-w-[1280px] flex-col gap-4 px-8 py-4 lg:px-12 md:flex-row md:items-center md:justify-between">
+            <ul className="flex flex-wrap items-center justify-center gap-4 text-[12px] font-medium text-slate-500 md:gap-12 md:text-[13px]">
               <li>
                 <a href="#projects">Projects</a>
               </li>
@@ -373,7 +373,7 @@ export default function App() {
             <a
               href="/resume.pdf"
               download
-              className="rounded-md bg-[#ffd11a] px-5 py-2 text-[11px] font-black tracking-[0.2em] text-slate-900 shadow-[0_8px_20px_rgba(255,209,26,0.32)] inline-block"
+              className="self-start rounded-md bg-[#ffd11a] px-5 py-2 text-[11px] font-black tracking-[0.2em] text-slate-900 shadow-[0_8px_20px_rgba(255,209,26,0.32)] inline-block md:self-auto"
             >
               RESUME
             </a>
@@ -398,7 +398,7 @@ export default function App() {
                   problems and building practical solutions along the way.
                 </p>
 
-                <div className="mt-10 flex items-center gap-4">
+                <div className="mt-10 flex flex-wrap items-center gap-3">
                   <a
                     href="#projects"
                     className="rounded-md bg-[#0476D0] px-6 py-3 text-xs font-bold tracking-[0.18em] text-white shadow-[0_16px_32px_rgba(4,118,208,0.28)] transition hover:-translate-y-0.5 hover:bg-[#0367b6]"
@@ -406,7 +406,7 @@ export default function App() {
                     VIEW WORK
                   </a>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <IconButton
                       label="LeetCode"
                       href="https://leetcode.com/u/Srajna/"
@@ -513,7 +513,74 @@ export default function App() {
               </p>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-10 space-y-6 lg:hidden">
+              {projectItems.map((project, index) => (
+                <article
+                  key={project.title}
+                  className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_16px_32px_rgba(15,23,42,0.06)]"
+                >
+                  {project.imageUrl ? (
+                    <div className="h-56 overflow-hidden bg-[#efedeb]">
+                      <img
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="h-full w-full object-contain object-center"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="p-5">
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="text-[1.5rem] leading-tight font-black tracking-[-0.05em] text-slate-900">
+                        {project.title}
+                      </h3>
+                      <span className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-black tracking-[0.18em] text-slate-500">
+                        0{index + 1}
+                      </span>
+                    </div>
+                    <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600">
+                      {project.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={`${project.title}-${tag}`}
+                          className="bg-[#e9f3fd] px-2.5 py-1 text-[10px] font-black tracking-[0.14em] text-[#1682e3]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {(project.projectHref || project.repoHref) && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {project.projectHref && (
+                          <a
+                            href={project.projectHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="rounded-md bg-[#0476D0] px-3 py-2 text-[10px] font-black tracking-[0.14em] text-white shadow-[0_10px_20px_rgba(4,118,208,0.2)]"
+                          >
+                            DEMO LINK
+                          </a>
+                        )}
+                        {project.repoHref && (
+                          <a
+                            href={project.repoHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="rounded-md border border-slate-200 bg-white px-3 py-2 text-[10px] font-black tracking-[0.14em] text-slate-700"
+                          >
+                            REPO LINK
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="mt-10 hidden lg:block">
               <div className="relative mx-auto h-[640px] max-w-[1180px] overflow-hidden">
                 <button
                   type="button"
