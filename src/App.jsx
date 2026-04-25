@@ -478,7 +478,7 @@ export default function App() {
                     </span>
                   </div>
 
-                  <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-[1rem] leading-7 text-slate-600">
+                  <ul className="mt-6 max-w-3xl list-disc space-y-3 pl-5 text-[1.05rem] leading-8 text-slate-600">
                     {item.points.map((point) => (
                       <li key={point}>{point}</li>
                     ))}
@@ -513,74 +513,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="mt-10 space-y-6 lg:hidden">
-              {projectItems.map((project, index) => (
-                <article
-                  key={project.title}
-                  className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_16px_32px_rgba(15,23,42,0.06)]"
-                >
-                  {project.imageUrl ? (
-                    <div className="h-56 overflow-hidden bg-[#efedeb]">
-                      <img
-                        src={project.imageUrl}
-                        alt={project.title}
-                        className="h-full w-full object-contain object-center"
-                      />
-                    </div>
-                  ) : null}
-                  <div className="p-5">
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-[1.5rem] leading-tight font-black tracking-[-0.05em] text-slate-900">
-                        {project.title}
-                      </h3>
-                      <span className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-black tracking-[0.18em] text-slate-500">
-                        0{index + 1}
-                      </span>
-                    </div>
-                    <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600">
-                      {project.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={`${project.title}-${tag}`}
-                          className="bg-[#e9f3fd] px-2.5 py-1 text-[10px] font-black tracking-[0.14em] text-[#1682e3]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    {(project.projectHref || project.repoHref) && (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {project.projectHref && (
-                          <a
-                            href={project.projectHref}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded-md bg-[#0476D0] px-3 py-2 text-[10px] font-black tracking-[0.14em] text-white shadow-[0_10px_20px_rgba(4,118,208,0.2)]"
-                          >
-                            DEMO LINK
-                          </a>
-                        )}
-                        {project.repoHref && (
-                          <a
-                            href={project.repoHref}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded-md border border-slate-200 bg-white px-3 py-2 text-[10px] font-black tracking-[0.14em] text-slate-700"
-                          >
-                            REPO LINK
-                          </a>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="mt-10 hidden lg:block">
+            <div className="mt-10">
               <div className="relative mx-auto h-[640px] max-w-[1180px] overflow-hidden">
                 <button
                   type="button"
@@ -615,7 +548,10 @@ export default function App() {
                   const translateY = project.position === 0 ? 0 : 34;
                   const scale = project.position === 0 ? 1 : 0.82;
                   const opacity = project.position === 0 ? 1 : 0.76;
-                  const cardWidth = project.position === 0 ? 600 : 430;
+                  const cardWidthStyle =
+                    project.position === 0
+                      ? "min(600px,calc(100vw-3rem))"
+                      : "min(430px,calc(100vw-3rem))";
                   const pointerClass =
                     project.position === 0
                       ? "pointer-events-auto"
@@ -631,7 +567,7 @@ export default function App() {
                         project.position === 0 ? "" : "select-none"
                       }`}
                       style={{
-                        width: `${cardWidth}px`,
+                        width: cardWidthStyle,
                         transform: `translate3d(calc(-50% + ${translateX}px), ${translateY}px, 0) scale(${scale})`,
                         opacity: isVisible ? opacity : 0,
                         zIndex: 20 - Math.abs(project.position),
@@ -672,7 +608,7 @@ export default function App() {
                             0{project.index + 1}
                           </span>
                         </div>
-                        <ul className="mt-3 list-disc space-y-2 pl-5 text-[0.94rem] leading-6 text-slate-600">
+                        <ul className="mt-3 list-disc space-y-2 pl-5 text-[1.05rem] leading-8 text-slate-600">
                           {project.points.map((point) => (
                             <li key={point}>{point}</li>
                           ))}
@@ -766,17 +702,17 @@ export default function App() {
                       {visibleSkillItems.map((item, index) => (
                         <div
                           key={`${item.label}-${index}`}
-                          className="group flex w-[140px] flex-none flex-col items-center rounded-xl border border-slate-200 bg-white px-4 py-5 text-center shadow-[0_10px_24px_rgba(15,23,42,0.05)] transition hover:-translate-y-1"
+                          className="group flex w-[120px] sm:w-[140px] flex-none flex-col items-center rounded-xl border border-slate-200 bg-white px-4 py-5 text-center shadow-[0_10px_24px_rgba(15,23,42,0.05)] transition hover:-translate-y-1"
                         >
-                          <div className="flex h-14 w-14 items-center justify-center">
+                          <div className="flex h-10 w-10 items-center justify-center sm:h-14 sm:w-14">
                             {item.iconUrl ? (
                               <img
                                 src={item.iconUrl}
                                 alt={item.label}
-                                className="h-12 w-12 object-contain"
+                                className="h-8 w-8 sm:h-12 sm:w-12 object-contain"
                               />
                             ) : (
-                              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0476D0]/10 text-sm font-black tracking-[0.16em] text-[#0476D0]">
+                              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#0476D0]/10 text-sm font-black tracking-[0.16em] text-[#0476D0]">
                                 AI
                               </div>
                             )}
@@ -809,7 +745,7 @@ export default function App() {
                     <p className="text-[10px] font-black tracking-[0.22em] text-[#1682e3]">
                       {card.title}
                     </p>
-                    <p className="mt-4 text-sm leading-6 text-slate-500">
+                    <p className="mt-4 text-base leading-7 text-slate-500">
                       {card.description}
                     </p>
                   </article>
