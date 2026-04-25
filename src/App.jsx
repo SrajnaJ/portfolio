@@ -825,8 +825,10 @@ export default function App() {
                     }
                     className="rounded-md border border-slate-200 bg-[#f5f2ef] px-6 py-8 text-center shadow-[0_10px_22px_rgba(15,23,42,0.04)] transition hover:-translate-y-1"
                   >
-                    <div className="text-2xl font-bold text-[#1682e3]">
-                      {card.icon}
+                    <div
+                      className={`text-2xl font-bold text-[#1682e3] ${card.title === "LinkedIn" ? "flex justify-center" : ""}`}
+                    >
+                      {card.title === "LinkedIn" ? <LinkedInIcon /> : card.icon}
                     </div>
                     <h3 className="mt-4 text-base font-black tracking-[-0.03em] text-slate-900">
                       {card.title}
