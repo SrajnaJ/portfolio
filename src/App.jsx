@@ -392,6 +392,21 @@ export default function App() {
                   <span className="block text-[#1682e3]">Engineer.</span>
                 </h1>
 
+                <div className="mt-8 flex justify-center lg:hidden">
+                  <div className="relative w-full max-w-[280px] rounded-[2rem]">
+                    <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_56%_32%,rgba(22,130,227,0.14),transparent_30%),radial-gradient(circle_at_50%_68%,rgba(255,209,26,0.16),transparent_24%)]" />
+                    <img
+                      src="/images/avatar.png"
+                      alt="Avatar illustration"
+                      className="relative block h-auto w-full rounded-[1.75rem] object-contain opacity-90 [mask-image:radial-gradient(circle_at_center,black_56%,transparent_90%)]"
+                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 rounded-b-[1.75rem] bg-[linear-gradient(180deg,rgba(248,246,243,0),rgba(248,246,243,1))]" />
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-14 rounded-t-[1.75rem] bg-[linear-gradient(180deg,rgba(248,246,243,1),rgba(248,246,243,0))]" />
+                    <div className="pointer-events-none absolute inset-y-0 left-0 w-14 rounded-l-[1.75rem] bg-[linear-gradient(90deg,rgba(248,246,243,1),rgba(248,246,243,0))]" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 w-14 rounded-r-[1.75rem] bg-[linear-gradient(270deg,rgba(248,246,243,1),rgba(248,246,243,0))]" />
+                  </div>
+                </div>
+
                 <p className="mt-8 max-w-[560px] text-[1.04rem] leading-7 text-slate-500">
                   Code, curiosity, and a lot of &ldquo;why does this behave like
                   that?&rdquo; I&apos;m a Software Engineer who enjoys exploring
@@ -429,12 +444,12 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="relative hidden min-h-[470px] items-center justify-center lg:flex">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_56%_32%,rgba(22,130,227,0.14),transparent_30%),radial-gradient(circle_at_50%_68%,rgba(255,209,26,0.16),transparent_24%)]" />
+              <div className="relative hidden min-h-[260px] items-center justify-center lg:flex lg:min-h-[520px] lg:justify-center">
+                <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_56%_32%,rgba(22,130,227,0.14),transparent_30%),radial-gradient(circle_at_50%_68%,rgba(255,209,26,0.16),transparent_24%)]" />
                 <img
                   src="/images/avatar.png"
                   alt="Avatar illustration"
-                  className="relative h-[470px] w-auto object-contain opacity-95 [mask-image:radial-gradient(circle_at_center,black_56%,transparent_90%)]"
+                  className="relative h-auto w-full max-w-[520px] rounded-[2rem] object-contain opacity-90 [mask-image:radial-gradient(circle_at_center,black_56%,transparent_90%)] lg:h-[470px] lg:w-auto"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,rgba(248,246,243,0),rgba(248,246,243,1))]" />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(248,246,243,1),rgba(248,246,243,0))]" />
@@ -549,9 +564,7 @@ export default function App() {
                   const scale = project.position === 0 ? 1 : 0.82;
                   const opacity = project.position === 0 ? 1 : 0.76;
                   const cardWidthStyle =
-                    project.position === 0
-                      ? "min(600px,calc(100vw-3rem))"
-                      : "min(430px,calc(100vw-3rem))";
+                    project.position === 0 ? "100%" : "min(560px,100%)";
                   const pointerClass =
                     project.position === 0
                       ? "pointer-events-auto"
@@ -563,7 +576,7 @@ export default function App() {
                     <article
                       key={project.title}
                       onClick={() => setActiveProjectIndex(project.index)}
-                      className={`absolute left-1/2 top-0 overflow-hidden rounded-md border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.14)] transition-all duration-500 ease-out ${pointerClass} ${
+                      className={`absolute left-1/2 top-0 min-w-0 w-full overflow-hidden rounded-md border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.14)] transition-all duration-500 ease-out ${pointerClass} ${
                         project.position === 0 ? "" : "select-none"
                       }`}
                       style={{
@@ -573,12 +586,12 @@ export default function App() {
                         zIndex: 20 - Math.abs(project.position),
                       }}
                     >
-                      <div className="flex h-[320px] items-center justify-center overflow-hidden bg-[#efedeb]">
+                      <div className="flex h-[240px] min-h-[240px] w-full items-center justify-center overflow-hidden bg-[#efedeb] sm:h-[320px]">
                         {project.imageUrl ? (
                           <img
                             src={project.imageUrl}
                             alt={project.title}
-                            className="h-full w-full object-contain object-center"
+                            className="h-full w-full object-cover object-center"
                           />
                         ) : (
                           <div
@@ -599,26 +612,25 @@ export default function App() {
                         )}
                       </div>
 
-                      <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.96)_18%,#ffffff)] p-5">
-                        <div className="flex items-start justify-between gap-4">
-                          <h3 className="text-[1.55rem] leading-tight font-black tracking-[-0.05em] text-slate-900">
+                      <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.96)_18%,#ffffff)] p-3 sm:p-5 min-w-0 w-full">
+                        <div className="min-w-0 w-full">
+                          <h3 className="text-[1.05rem] sm:text-[1.35rem] leading-tight font-black tracking-[-0.05em] text-slate-900 break-words whitespace-normal max-w-full min-w-0">
                             {project.title}
                           </h3>
-                          <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-black tracking-[0.18em] text-slate-500">
-                            0{project.index + 1}
-                          </span>
                         </div>
-                        <ul className="mt-3 list-disc space-y-2 pl-5 text-[1.05rem] leading-8 text-slate-600">
+                        <ul className="mt-3 list-disc space-y-2 pl-4 sm:pl-5 text-[0.9rem] sm:text-[1.05rem] leading-7 text-slate-600 break-words whitespace-normal max-w-full">
                           {project.points.map((point) => (
-                            <li key={point}>{point}</li>
+                            <li key={point} className="break-words">
+                              {point}
+                            </li>
                           ))}
                         </ul>
 
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-2 text-[0.78rem] leading-6 max-w-full">
                           {project.tags.map((tag) => (
                             <span
                               key={`${project.title}-${tag}`}
-                              className="bg-[#e9f3fd] px-2.5 py-1 text-[10px] font-black tracking-[0.14em] text-[#1682e3]"
+                              className="bg-[#e9f3fd] px-2 py-1 text-[9px] font-black tracking-[0.12em] text-[#1682e3] whitespace-nowrap"
                             >
                               {tag}
                             </span>
@@ -626,13 +638,13 @@ export default function App() {
                         </div>
 
                         {(project.projectHref || project.repoHref) && (
-                          <div className="mt-5 flex items-center gap-2">
+                          <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:flex-wrap sm:justify-start">
                             {project.projectHref && (
                               <a
                                 href={project.projectHref}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="rounded-md bg-[#0476D0] px-3 py-2 text-[10px] font-black tracking-[0.14em] text-white shadow-[0_10px_20px_rgba(4,118,208,0.2)]"
+                                className="rounded-md bg-[#0476D0] px-2.5 py-2 text-[10px] font-black tracking-[0.12em] text-white shadow-[0_10px_20px_rgba(4,118,208,0.2)] min-w-0 w-full sm:w-auto max-w-full text-center"
                               >
                                 DEMO LINK
                               </a>
@@ -642,7 +654,7 @@ export default function App() {
                                 href={project.repoHref}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="rounded-md border border-slate-200 bg-white px-3 py-2 text-[10px] font-black tracking-[0.14em] text-slate-700"
+                                className="rounded-md border border-slate-200 bg-white px-2.5 py-2 text-[10px] font-black tracking-[0.12em] text-slate-700 min-w-0 w-full sm:w-auto max-w-full text-center"
                               >
                                 REPO LINK
                               </a>
